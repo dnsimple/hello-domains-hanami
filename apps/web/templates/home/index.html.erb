@@ -1,0 +1,5 @@
+<% if signed_in? %>
+  Hello, <%= current_user.email %>
+<% else %>
+  <%= link_to 'Sign in', '/auth/dnsimple' %>
+<% end %>
