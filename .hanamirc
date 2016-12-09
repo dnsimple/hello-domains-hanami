@@ -1,0 +1,4 @@
+project=hello_domains
+architecture=container
+test=rspec
+template=erb
