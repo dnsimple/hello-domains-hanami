@@ -1,5 +1,15 @@
 <% if signed_in? %>
   Hello, <%= current_user.email %>
+
+  <% if domains.any? %>
+    <ul id="domains">
+      <% domains.each do |domain| %>
+        <li><%= domain.name %></li>
+      <% end %>
+    </ul>
+  <% else %>
+    <p>No domains</p>
+  <% end %>
 <% else %>
   <%= link_to 'Sign in', '/auth/dnsimple' %>
 <% end %>

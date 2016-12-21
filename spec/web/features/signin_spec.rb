@@ -2,14 +2,9 @@ require "features_helper"
 
 RSpec.feature "Sign in" do
   scenario "with success" do
-    data = omniauth_successful_signup
+    user = with_successful_signin
 
     visit "/"
-
-    click_link "Sign in"
-    expect(current_path).to eq("/")
-
-    visit "/" # Force session reload because of a Capybara bug
-    expect(page).to have_content("Hello, #{data.dig('info', 'email')}")
+    expect(page).to have_content("Hello, #{user.email}")
   end
 end

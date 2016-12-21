@@ -1,6 +1,5 @@
 require 'hanami/helpers'
 require 'hanami/assets'
-require_relative 'views/authentication'
 
 module Web
   class Application < Hanami::Application
@@ -264,7 +263,6 @@ module Web
       view.prepare do
         include Hanami::Helpers
         include Web::Assets::Helpers
-        include Web::Views::Authentication
       end
     end
 
