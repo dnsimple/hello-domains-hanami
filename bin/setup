@@ -1,0 +1,52 @@
+#!/usr/bin/env bash
+set -euo pipefail
+set -o errexit
+IFS=$'\n\t'
+
+DNSIMPLE_CLIENT_ID="${1:?[ERROR] Please provide DNSimple client ID}"
+DNSIMPLE_CLIENT_SECRET="${2:?[ERROR] Please provide DNSimple client secret}"
+
+install_gems() {
+  echo "[Hello Domains] Installing gems.."
+  echo ""
+
+  bundle install
+}
+
+setup_env_vars() {
+  echo "[Hello Domains] Setting up env vars.."
+  echo ""
+
+  setup_env_file development
+  setup_env_file test
+}
+
+setup_env_file() {
+  local hanami_env=$1
+  local hanami_session_secret=$(openssl rand -hex 32)
+  local template=.env.example
+  local target=.env.$hanami_env
+
+  sed \
+    -e "s/\${hanami_env}/$hanami_env/" \
+    -e "s/\${hanami_session_secret}/$hanami_session_secret/" \
+    -e "s/\${dnsimple_client_id}/$DNSIMPLE_CLIENT_ID/" \
+    -e "s/\${dnsimple_client_secret}/$DNSIMPLE_CLIENT_SECRET/" \
+    $template > $target
+
+}
+
+prepare_databases() {
+  echo "[Hello Domains] Preparing database.."
+
+  HANAMI_ENV=development bundle exec hanami db prepare
+  HANAMI_ENV=test bundle exec hanami db prepare
+}
+
+main() {
+  install_gems
+  setup_env_vars
+  prepare_databases
+}
+
+main

@@ -4,7 +4,7 @@ This is a full working example project to create a DNSimple addon with Hanami.
 
 ## Prerequisites
 
-  * Ruby 2.3+
+  * Ruby 2.3+ (with OpenSSL)
   * SQLite
   * A DNSimple [sandbox](https://developer.dnsimple.com/sandbox) account
 
@@ -15,7 +15,7 @@ To setup this project, please use the following commands:
 ```shell
 ➜ git clone https://github.com/dnsimple/hello-domains-hanami.git
 ➜ cd hello-domains-hanami
-➜ ./bin/setup
+➜ ./bin/setup [DNSIMPLE_CLIENT_ID] [DNSIMPLE_CLIENT_SECRET]
 ➜ bundle exec hanami server # visit http://localhost:2300
 ```
 
