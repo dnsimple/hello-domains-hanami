@@ -21,7 +21,7 @@ end
 group :test do
   gem 'rspec'
   gem 'capybara'
-  gem 'hanami-fabrication', github: 'jodosha/hanami-fabrication'
+  gem 'hanami-fabrication'
 end
 
 group :production do
