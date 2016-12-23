@@ -8,7 +8,7 @@ gem 'hanami-model', '~> 0.7'
 gem 'sqlite3'
 gem 'dnsimple'
 gem 'omniauth'
-gem 'omniauth-dnsimple', path: 'vendor/omniauth-dnsimple'
+gem 'omniauth-dnsimple', github: 'dnsimple/omniauth-dnsimple'
 
 group :development do
   gem 'shotgun'
