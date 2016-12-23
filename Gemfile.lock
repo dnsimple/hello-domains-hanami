@@ -152,7 +152,7 @@ GEM
       rom (~> 2.0)
       rom-mapper (~> 0.4)
       rom-support (~> 2.0)
-    rom-sql (0.9.0)
+    rom-sql (0.9.1)
       dry-core (~> 0.2)
       dry-equalizer (~> 0.2)
       dry-types (~> 0.9)
