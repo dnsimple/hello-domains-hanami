@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/dnsimple/omniauth-dnsimple.git
-  revision: cb67ee6dd111e97b3286609f67511eff982242c7
+  revision: f0c615a389afcb245b6fbc1ce5a5683ddc0381fa
   specs:
     omniauth-dnsimple (0.1.0)
       omniauth-oauth2 (~> 1.4)
