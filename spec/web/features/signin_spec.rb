@@ -5,6 +5,6 @@ RSpec.feature "Sign in" do
     user = with_successful_signin
 
     visit "/"
-    expect(page).to have_content("Hello, #{user.email}")
+    expect(page).to have_content(user.email)
   end
 end

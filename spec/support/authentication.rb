@@ -8,7 +8,10 @@ module RSpec
 
         visit "/"
 
-        click_link "Sign in"
+        within "#navigation" do
+          click_link "Sign in"
+        end
+
         expect(current_path).to eq("/")
 
         visit "/" # Force session reload because of a Capybara bug

@@ -31,7 +31,7 @@ RSpec.feature "List domains" do
     scenario "it lists them" do
       visit "/"
 
-      expect(page).to have_content("No domains")
+      expect(page).to have_content("Ouch, we haven't found any domain associated with your account.")
     end
   end
 end

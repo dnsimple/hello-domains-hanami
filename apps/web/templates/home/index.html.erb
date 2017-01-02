@@ -1,15 +1,29 @@
-<% if signed_in? %>
-  Hello, <%= current_user.email %>
-
-  <% if domains.any? %>
-    <ul id="domains">
-      <% domains.each do |domain| %>
-        <li><%= domain.name %></li>
+<div class="cf">
+  <div class="fl w-100 pa2">
+    <% if signed_in? %>
+      <% if domains.any? %>
+        <table id="domains" class="dn-table">
+          <thead>
+            <tr>
+              <th>Name</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% domains.each do |domain| %>
+              <tr>
+                <td><%= domain.name %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      <% else %>
+        <h1 class="f2 lh-copy">Ouch, we haven't found any domain associated with your account.</h1>
       <% end %>
-    </ul>
-  <% else %>
-    <p>No domains</p>
-  <% end %>
-<% else %>
-  <%= link_to 'Sign in', '/auth/dnsimple' %>
-<% end %>
+    <% else %>
+      <h1 class="f1 lh-title">A DNSimple addon skeleton built with Ruby &amp; Hanami.</h1>
+      <div>
+        <%= link_to "Sign in", "/auth/dnsimple" %> or read the <%= link_to "source code", "https://github.com/dnsimple/hello-domains-hanami" %>.
+      </div>
+    <% end %>
+  </div>
+</div>
