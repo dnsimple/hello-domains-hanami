@@ -36,7 +36,7 @@ module RSpec
         end
 
         stub_request(:get, "https://api.sandbox.dnsimple.com/v2/#{user.uid}/domains")
-          .with(headers: { 'Accept' => 'application/json', 'Authorization' => "Bearer #{user.token}", 'User-Agent' => "dnsimple-ruby/#{Dnsimple::VERSION}" })
+          .with(headers: { 'Accept' => 'application/json', 'Authorization' => "Bearer #{user.token}", 'User-Agent' => "dnsimple-ruby/#{Dnsimple::VERSION} hello-domains-hanami" })
           .to_return(status: 200, body: JSON.generate(body), headers: {})
       end
       # rubocop:enable Metrics/AbcSize
