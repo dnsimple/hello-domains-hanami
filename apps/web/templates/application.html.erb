@@ -13,7 +13,7 @@
       <div class="dn-navbar-nav">
         <% if signed_in? %>
           <%= current_user.email %> |
-          <%= link_to 'Sign out', '/auth/dnsimple' %>
+          <%= link_to 'Sign out', routes.signout_path %>
         <% else %>
           <%= link_to 'Sign in', '/auth/dnsimple' %>
         <% end %>
