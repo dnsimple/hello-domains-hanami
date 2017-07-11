@@ -28,13 +28,22 @@ Hanami.configure do
   end
 
   mailer do
-    root 'lib/hello_domains/mailers'
+    root Hanami.root.join("lib", "hello_domains", "mailers")
 
     # See http://hanamirb.org/guides/mailers/delivery
-    delivery do
-      development :test
-      test        :test
-      # production :smtp, address: ENV['SMTP_PORT'], port: 1025
+    delivery :test
+  end
+
+  environment :development do
+    # See: http://hanamirb.org/guides/projects/logging
+    logger level: :info
+  end
+
+  environment :production do
+    logger level: :info, formatter: :json
+
+    mailer do
+      delivery :smtp, address: ENV['SMTP_HOST'], port: ENV['SMTP_PORT']
     end
   end
 end

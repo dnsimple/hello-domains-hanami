@@ -1,9 +1,8 @@
 source 'https://rubygems.org'
 
-gem 'bundler'
 gem 'rake'
-gem 'hanami',       '~> 0.9'
-gem 'hanami-model', '~> 0.7'
+gem 'hanami',       '~> 1.0'
+gem 'hanami-model', '~> 1.0'
 
 gem 'sqlite3'
 gem 'dnsimple'
