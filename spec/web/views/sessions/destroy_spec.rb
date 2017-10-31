@@ -6,9 +6,7 @@ RSpec.describe Web::Views::Sessions::Destroy do
   let(:view)      { described_class.new(template, exposures) }
   let(:rendered)  { view.render }
 
-  it 'exposes #foo' do
-    pending 'This is an auto-generated test. Edit it and add your own tests.'
-
+  xit 'exposes #foo' do
     # Example
     expect(view.foo).to eq exposures.fetch(:foo)
   end
