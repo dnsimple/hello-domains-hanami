@@ -5,7 +5,7 @@ This is a full working example project to create a DNSimple addon with Hanami.
 ## Prerequisites
 
   * Ruby 2.3+ (with OpenSSL)
-  * SQLite
+  * PostgreSQL 9.4+
   * A DNSimple [sandbox](https://developer.dnsimple.com/sandbox) account
   * A DNSimple [OAuth Application](https://support.dnsimple.com/articles/oauth-applications/) on sandbox
 
@@ -32,4 +32,4 @@ To run the tests please run:
 
 ## Copyright
 
-Copyright (c) 2016 Aetrion LLC.
+Copyright (c) 2017 Aetrion LLC.
