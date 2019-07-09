@@ -22,6 +22,15 @@ To setup this project, please use the following commands:
 ➜ bundle exec hanami server # visit http://localhost:2300
 ```
 
+### Development
+
+By default, _Hello Domains_ targets DNSimple Sandbox.
+If you need, for development purposes, to interact with a different DNSimple stage, please edit the following env vars in `.env.development`
+
+  * `DNSIMPLE_BASE_URL`
+  * `DNSIMPLE_AUTHORIZE_URL`
+  * `DNSIMPLE_TOKEN_URL`
+
 ## Testing
 
 To run the tests please run:
