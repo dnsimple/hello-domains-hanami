@@ -7,7 +7,7 @@ gem 'hanami-model', '~> 1.1'
 gem 'pg'
 gem 'dnsimple'
 gem 'omniauth'
-gem 'omniauth-dnsimple', github: 'dnsimple/omniauth-dnsimple'
+gem 'omniauth-dnsimple', git: 'https://github.com/dnsimple/omniauth-dnsimple.git'
 
 group :development do
   gem 'shotgun'
