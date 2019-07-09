@@ -79,8 +79,20 @@ module Web
       # Configure Rack middleware for this application
       #
       middleware.use OmniAuth::Builder do
+        # Production
+        # provider :dnsimple, ENV['DNSIMPLE_CLIENT_ID'], ENV['DNSIMPLE_CLIENT_SECRET'],
+
+        # Sandbox
         provider :dnsimple, ENV['DNSIMPLE_CLIENT_ID'], ENV['DNSIMPLE_CLIENT_SECRET'],
                  sandbox: ENV['DNSIMPLE_SANDBOX']
+
+        # Custom
+        # provider :dnsimple, ENV['DNSIMPLE_CLIENT_ID'], ENV['DNSIMPLE_CLIENT_SECRET'],
+        #          client_options: {
+        #            site: ENV['DNSIMPLE_BASE_URL'],
+        #            authorize_url: ENV['DNSIMPLE_AUTHORIZE_URL'],
+        #            token_url: ENV['DNSIMPLE_TOKEN_URL']
+        #          }
       end
 
       # Default format for the requests that don't specify an HTTP_ACCEPT header
